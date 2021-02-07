@@ -2,7 +2,7 @@ import React from 'react'
 import Add  from './Add'
 import Sub  from './Sub'
 import { Container, Row, Col } from 'react-bootstrap';
-import {Route, Switch } from "react-router-dom";
+import {Route, Switch, NavLink } from "react-router-dom";
 // import { Form, Col, Row, Button } from "react-bootstrap";
 import MovieCard from './components/MovieCard'
 import {movieData} from './data/movie_data'
@@ -15,6 +15,8 @@ import Axios from './components/Axios'
 import About from '../src/pages/about/About'
 import Contact from '../src/pages/contact/Contact'
 import PageError from './errors/PageError'
+import Menu from './pages/nav/Home'
+import './styles/LandingPage.css'
 
 
 let MyStyle = {fontFamily: 'areal', backgroundColor: 'powderblue', width: '80rem' }
@@ -48,12 +50,16 @@ function App () {
     <br/><p style= {MyStyle}>... Axios ...</p>
     <Axios />
 
-    <br/><p style= {MyStyle}>... About ...</p>
+    <br/><p style= {MyStyle}>... About Route :- Switch, Route ...</p>
     <Switch>
       <Route exact path='/' component={About} />
       <Route path='/contact' component={Contact} />
       <Route component={PageError} />
     </Switch>
+
+    <br/><p style= {MyStyle}>... Menu :- Link...</p>
+    <NavLink exact activeClassName = 'active_class' to= '/'> About US </NavLink>
+    <NavLink exact activeClassName = 'active_class' to= '/contact'> Contact </NavLink>
 
     
     </center>
