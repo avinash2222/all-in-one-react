@@ -14,54 +14,76 @@ import A from './components/ComponentA'
 import Axios from './components/Axios'
 import About from '../src/pages/about/About'
 import Contact from '../src/pages/contact/Contact'
+import Product from '../src/pages/product/Product'
+import Service from '../src/pages/service/Service'
 import PageError from './errors/PageError'
 import Menu from './pages/nav/Home'
 import './styles/LandingPage.css'
+import WeatherFetch from './components/WeatherFetch'
 
 
-let MyStyle = {fontFamily: 'areal', backgroundColor: 'powderblue', width: '80rem' }
+let ColMyStyle1 = {fontFamily: 'areal', backgroundColor: 'powderblue', width: '80rem' }
+let ColMyStyle2 = {fontFamily: 'areal', backgroundColor: 'lightblue', width: '80rem' }
+let headline = {fontFamily: 'areal', backgroundColor: 'white' }
 
 function App () {
   return(
   <div>
-    <center><p style={{fontFamily: 'Fantasy', fontSize: 34, color: 'lightpink', textAlign:'center'}}>Movie Rating Plateform </p>
+    <center><p style={{fontFamily: 'Fantasy', fontSize: 34, color: 'lightpink', textAlign:'center'}}>React:- All in a single page </p>
 
-    <p style= {MyStyle}>... context ... <NormalContext /></p>
+    <p style= {ColMyStyle2}>... context ... <NormalContext /></p> 
 
-    <p style= {MyStyle}>... props ...</p>
-    <Counter /> {/* Counter component */}
-
-    <br/><p style= {MyStyle}>... useState ...</p>
-    <ToDo />   {/* ToDo component */}
-
-    <br/><p style= {MyStyle}>... movieCard ...</p>
     <Container>
       <Row>
         { movieData.map(data => <Col sm><MovieCard imgsrc = {data.imgsrc} name={data.name} decs={data.decs} /> </Col>) } {/* Movie Card component */}
       </Row>
     </Container>
 
-    <br/><p style= {MyStyle}>... useEffect ...</p>
-    <UseEffect />
+    <Container>
+      <Row xs="8">
+        <Col style= {ColMyStyle1}>
+       
+          <div className="separator"><br/><span>... props:- variables passed by its parent component ...</span><br/></div>
+          <br/><Counter /><br/> {/* Counter component */}
+          
+          <div className="separator"><br/><span>... useEffect:- do some work after render ...</span><br/></div>
+          <br/><UseEffect /><br/>
 
-    <br/><p style= {MyStyle}>... useContext ...</p>
-    <A />
+          <div className="separator"><br/><span>... useState:- variables, directly initialized and managed by the component ...</span><br/></div>
+          <br/><ToDo /><br/>   {/* ToDo component */} 
+        </Col>
 
-    <br/><p style= {MyStyle}>... Axios ...</p>
-    <Axios />
+        <Col style= {ColMyStyle2}>
+          <div className="separator"><br/><span>... Axios get data ...</span><br/></div>
+          <br/><Axios /><br/>
 
-    <br/><p style= {MyStyle}>... About Route :- Switch, Route ...</p>
-    <Switch>
-      <Route exact path='/' component={About} />
-      <Route path='/contact' component={Contact} />
-      <Route component={PageError} />
-    </Switch>
+          <div className="separator"><br/><span>... About Route :- Menu, NavLink, Switch, Route, component, render, props ...</span><br/></div>
+          <br/><NavLink exact activeClassName = 'active_class' style={{ marginRight: 10 }} to= '/'> About US </NavLink>
+          <NavLink exact activeClassName = 'active_class' style={{ marginRight: 10 }} to= '/contact'> Contact </NavLink>
+          <NavLink exact activeClassName = 'active_class' style={{ marginRight: 10 }} to= '/product'> Product </NavLink>
+          <NavLink exact activeClassName = 'active_class' style={{ marginRight: 10 }} to= '/service'> Service </NavLink>
+          <Switch> {/* if u want to pass props then use render else component is fine */}
+            <Route exact path='/' component={About} /> 
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/product' component={() => <Product name= 'Product Props' />} />
+            <Route exact path='/service' render={() => <Service name= 'Service Props' />} />
+            <Route component={PageError} />
+          </Switch><br/>
 
-    <br/><p style= {MyStyle}>... Menu :- Link...</p>
-    <NavLink exact activeClassName = 'active_class' to= '/'> About US </NavLink>
-    <NavLink exact activeClassName = 'active_class' to= '/contact'> Contact </NavLink>
+          <div className="separator"><br/><span>... Weather App:- useEffect, fetch api call ...</span><br/></div>
+          <br/><WeatherFetch /><br/>
+
+          <div className="separator"><br/><span>... useContext:- accessed throughout the component hierarchy without passing the props down manually to each level ...</span><br/></div>
+          <br/><A /><br/>
+        </Col>
+      </Row>
+    </Container>
+
 
     
+
+
+
     </center>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
   </div>

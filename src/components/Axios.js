@@ -18,10 +18,7 @@ const Axios = () => {
 
   return (
     <>
-    <h1>You choose <span style={{color: 'red'}}>{num}</span> value</h1>
-    <h1>My name is <span style={{color: 'red'}}>{name}</span> value</h1>
-    <h1>I have <span style={{color: 'red'}}>{moves}</span> moves</h1>
-      <select value = {num} onChange ={ event => {
+    <select value = {num} onChange ={ event => {
         setNum(event.target.value)
       }}>
         <option value ='1'> 1 </option>
@@ -30,6 +27,10 @@ const Axios = () => {
         <option value ='4'> 4 </option>
         <option value ='5'> 5 </option>
       </select>
+      
+    <h1>You choose <span style={{color: 'red'}}>{num}</span> value</h1>
+    <h1>My name is <span style={{color: 'red'}}>{name}</span> value</h1>
+    <h1>I have <span style={{color: 'red'}}>{moves}</span> moves</h1>
       </>
   )
 }
