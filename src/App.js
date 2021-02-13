@@ -1,6 +1,4 @@
 import React from 'react'
-import Add  from './Add'
-import Sub  from './Sub'
 import { Container, Row, Col } from 'react-bootstrap';
 import {Route, Switch, NavLink } from "react-router-dom";
 // import { Form, Col, Row, Button } from "react-bootstrap";
@@ -20,7 +18,7 @@ import PageError from './errors/PageError'
 import Menu from './pages/nav/Home'
 import './styles/LandingPage.css'
 import WeatherFetch from './components/WeatherFetch'
-
+const BASE_PATH = 'all-in-one-react'
 
 let ColMyStyle1 = {fontFamily: 'areal', backgroundColor: 'powderblue', width: '80rem' }
 let ColMyStyle2 = {fontFamily: 'areal', backgroundColor: 'lightblue', width: '80rem' }
