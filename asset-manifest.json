@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/all-in-one-react/static/css/main.15cb0e71.chunk.css",
+    "main.js": "/all-in-one-react/static/js/main.6d7783d1.chunk.js",
+    "main.js.map": "/all-in-one-react/static/js/main.6d7783d1.chunk.js.map",
+    "runtime-main.js": "/all-in-one-react/static/js/runtime-main.ab78545d.js",
+    "runtime-main.js.map": "/all-in-one-react/static/js/runtime-main.ab78545d.js.map",
+    "static/js/2.8453bf53.chunk.js": "/all-in-one-react/static/js/2.8453bf53.chunk.js",
+    "static/js/2.8453bf53.chunk.js.map": "/all-in-one-react/static/js/2.8453bf53.chunk.js.map",
+    "index.html": "/all-in-one-react/index.html",
+    "static/css/main.15cb0e71.chunk.css.map": "/all-in-one-react/static/css/main.15cb0e71.chunk.css.map",
+    "static/js/2.8453bf53.chunk.js.LICENSE.txt": "/all-in-one-react/static/js/2.8453bf53.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab78545d.js",
+    "static/js/2.8453bf53.chunk.js",
+    "static/css/main.15cb0e71.chunk.css",
+    "static/js/main.6d7783d1.chunk.js"
+  ]
+}
