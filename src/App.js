@@ -7,7 +7,8 @@ import {Route, Switch, NavLink } from "react-router-dom";
 import MovieCard from './components/MovieCard'
 import {movieData} from './data/movie_data'
 import Counter from './components/Counter'
-import ToDo from './components/ToDo'
+import ToDo from './components/ToDo' 
+import SearchToDo from './components/SearchToDo' 
 import UseEffect from './components/UseEffect'
 import NormalContext from './components/NormalContext'
 import A from './components/ComponentA'
@@ -16,6 +17,7 @@ import About from '../src/pages/about/About'
 import Contact from '../src/pages/contact/Contact'
 import Product from '../src/pages/product/Product'
 import Service from '../src/pages/service/Service'
+import SearchInMockData from './components/SearchInMockData'
 import PageError from './errors/PageError'
 import Menu from './pages/nav/Home'
 import './styles/LandingPage.css'
@@ -49,8 +51,11 @@ function App () {
           <div className="separator"><br/><span>... useEffect:- do some work after render ...</span><br/></div>
           <br/><UseEffect /><br/>
 
-          <div className="separator"><br/><span>... useState:- variables, directly initialized and managed by the component ...</span><br/></div>
+          <div className="separator"><br/><span>... useState:- variables, localStorage, directly initialized and managed by the component ...</span><br/></div>
           <br/><ToDo /><br/>   {/* ToDo component */} 
+
+          <div className="separator"><br/><span>... useState:- variables, localStorage ...</span><br/></div>
+          <br/><SearchToDo name="jiiii"/><br/>   {/* ToDo component */} 
         </Col>
 
         <Col style= {ColMyStyle2}>
@@ -75,6 +80,9 @@ function App () {
 
           <div className="separator"><br/><span>... useContext:- accessed throughout the component hierarchy without passing the props down manually to each level ...</span><br/></div>
           <br/><A /><br/>
+
+          <div className="separator"><br/><span>... mochdata:mockaroo.com, filter search ...</span><br/></div>
+          <br/><SearchInMockData /><br/>
         </Col>
       </Row>
     </Container>

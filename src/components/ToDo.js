@@ -1,21 +1,44 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Icon from '@material-ui/core/Icon';
+import _ from 'lodash'
 import { Container, Row, Col } from 'react-bootstrap';
 import { Input, TextField } from '@material-ui/core';
+import ThemeContext from '../contexts/ThemeContext';
+import SearchToDo from './SearchToDo'
 
 export default function ToDo() {
-  const [inputText, setInputText] =useState(' ')
+  const LOCAL_STORAGE_KEY = 'todo'
+  const [inputText, setInputText] =useState('')
   const [todos, setTodos] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
+
+  
   
   function inputTextHandler(e) {
     setInputText(e.target.value)
   }
 
+  useEffect(() => {
+    const retriveToDo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (retriveToDo) setTodos(retriveToDo)
+  }, [])
+  
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+  }, [todos])
+
+
+
   function changeToDo(e) {
+    let aa= {inputText}
+    if (!aa.inputText) {
+      alert('input cant be empty!')
+      return 
+    }
     setTodos([...todos, inputText])
-    setInputText(" ")
+    setInputText("")
   }
 
   const deleteItems = (key) => {
