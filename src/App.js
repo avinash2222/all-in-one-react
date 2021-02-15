@@ -33,7 +33,7 @@ function App () {
   <div>
     <center><p style={{fontFamily: 'Fantasy', fontSize: 34, color: 'lightpink', textAlign:'center'}}>React:- All in a single page </p>
 
-    <p style= {ColMyStyle2}>... context ... <NormalContext /></p> 
+    <div style= {ColMyStyle2}>... context ... <NormalContext /></div> 
 
     <Container>
       <Row>
