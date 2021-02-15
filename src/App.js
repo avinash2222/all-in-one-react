@@ -18,6 +18,7 @@ import Contact from '../src/pages/contact/Contact'
 import Product from '../src/pages/product/Product'
 import Service from '../src/pages/service/Service'
 import SearchInMockData from './components/SearchInMockData'
+import NavBar from './components/NavBar'
 import PageError from './errors/PageError'
 import Menu from './pages/nav/Home'
 import './styles/LandingPage.css'
@@ -33,6 +34,7 @@ function App () {
   <div>
     <center><p style={{fontFamily: 'Fantasy', fontSize: 34, color: 'lightpink', textAlign:'center'}}>React:- All in a single page </p>
 
+    <NavBar />
     <div style= {ColMyStyle2}>... context ... <NormalContext /></div> 
 
     <Container>
