@@ -38,7 +38,7 @@ function App () {
     <NavBar />
     {/* <Slider slides={images}/> */}
     <p style={{fontFamily: 'Fantasy', fontSize: 34, color: '#41bc9d', textAlign:'center'}}>React:- All in a single page </p>
-    <NormalContext />
+    {/* <NormalContext /> */}
 
     <Container>
       <Row>
