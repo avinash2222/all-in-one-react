@@ -1,6 +1,5 @@
 import React from 'react'
-import Add  from './Add'
-import Sub  from './Sub'
+require('dotenv').config()
 import { Container, Row, Col } from 'react-bootstrap';
 import {Route, Switch, NavLink } from "react-router-dom";
 // import { Form, Col, Row, Button } from "react-bootstrap";
@@ -23,7 +22,10 @@ import PageError from './errors/PageError'
 import Menu from './pages/nav/Home'
 import './styles/LandingPage.css'
 import WeatherFetch from './components/WeatherFetch'
-
+import Slider from './components/Slider/Slider'
+import images from './data/SLIDER_DATA.js'
+import Login from "./pages/account/Login";
+import './App.scss'
 
 let ColMyStyle1 = {fontFamily: 'areal', backgroundColor: 'powderblue', width: '80rem' }
 let ColMyStyle2 = {fontFamily: 'areal', backgroundColor: 'lightblue', width: '80rem' }
@@ -32,10 +34,11 @@ let headline = {fontFamily: 'areal', backgroundColor: 'white' }
 function App () {
   return(
   <div>
-    <center><p style={{fontFamily: 'Fantasy', fontSize: 34, color: 'lightpink', textAlign:'center'}}>React:- All in a single page </p>
-
+    <center>
     <NavBar />
-    <div style= {ColMyStyle2}>... context ... <NormalContext /></div> 
+    {/* <Slider slides={images}/> */}
+    <p style={{fontFamily: 'Fantasy', fontSize: 34, color: '#41bc9d', textAlign:'center'}}>React:- All in a single page </p>
+    {/* <NormalContext /> */}
 
     <Container>
       <Row>
@@ -51,7 +54,7 @@ function App () {
           <br/><Counter /><br/> {/* Counter component */}
           
           <div className="separator"><br/><span>... useEffect:- do some work after render ...</span><br/></div>
-          <br/><UseEffect /><br/>
+          {/* <br/><UseEffect /><br/> */}
 
           <div className="separator"><br/><span>... useState:- variables, localStorage, directly initialized and managed by the component ...</span><br/></div>
           <br/><ToDo /><br/>   {/* ToDo component */} 
