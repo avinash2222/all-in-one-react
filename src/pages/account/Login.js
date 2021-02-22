@@ -12,7 +12,6 @@ const Login = () => {
   const [isLoginOtp, setIsLoginOtp] = useState(false);
   const [isOtpSuccess, setIsOtpSuccess] = useState(false);
   const [otpValue, setOtpValue] = useState("");
-  const { login, isAuthenticated, isProfessional } = useAuthDetails();
   const [loginDetails, setLoginDetails] = useState({})
 
   function postLogin(event) {
@@ -108,10 +107,6 @@ const Login = () => {
         setIsError(message);
       });
   };
-
-  if (isAuthenticated) {
-    return <Redirect to={isProfessional() ? "/patients" : "/dashboard"} />;
-  }
   
   return (
     <div className="login-set">

@@ -9,9 +9,13 @@ const Axios = () => {
   useEffect(() => {
     // alert('hi avinash')
     async function getData() {
+      try {
       const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
       setName(res.data.name)
       setMoves(res.data.moves.length)
+      } catch (err) {
+        console.log(err)
+      }
     }
     getData()
   })
